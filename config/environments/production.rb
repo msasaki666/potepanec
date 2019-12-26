@@ -104,5 +104,4 @@ Rails.application.configure do
    },
    bucket: 'potepanecmotoaki'
  }
-Ssß
 end
