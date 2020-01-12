@@ -63,5 +63,5 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # add white list ips under Docker
-   config.web_console.whitelisted_ips = '0.0.0.0/0'
+  config.web_console.whitelisted_ips = '0.0.0.0/0'
 end
