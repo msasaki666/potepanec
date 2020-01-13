@@ -1,9 +1,9 @@
 <% provide(:title, @product.name) %>
-<%= render '/potepan/products/product_header', product: @product %>
+<%= render 'product_header', product: @product %>
 <!-- MAIN CONTENT SECTION -->
 <section class="mainContent clearfix">
   <div class="container">
-    <%= render '/potepan/products/product_detail', product: @product %>
-    <%= render '/potepan/products/related_product' %>
+    <%= render 'product_detail', product: @product %>
+    <%= render 'related_product' %>
   </div>
 </section>
