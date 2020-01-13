@@ -1,4 +1,5 @@
 module ApplicationHelper
+  # rubocop:disable all
   def full_title(page_title = '')
     base_title = "BIGBAG Store"
     if page_title.blank?
@@ -7,4 +8,5 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     end
   end
+  # rubocop:enable all
 end
