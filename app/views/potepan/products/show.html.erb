@@ -1,0 +1,9 @@
+<% provide(:title, @product.name) %>
+<%= render 'product_header', product: @product %>
+<!-- MAIN CONTENT SECTION -->
+<section class="mainContent clearfix">
+  <div class="container">
+    <%= render 'product_detail', product: @product %>
+    <%= render 'related_product' %>
+  </div>
+</section>
