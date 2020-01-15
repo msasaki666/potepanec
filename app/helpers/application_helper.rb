@@ -1,6 +1,5 @@
 module ApplicationHelper
-  # rubocop:disable all
-  def full_title(page_title = '')
+  def full_title(page_title = '') # rubocop:disable Style/OptArgParameters
     base_title = "BIGBAG Store"
     if page_title.blank?
       base_title
@@ -8,5 +7,4 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     end
   end
-  # rubocop:enable all
 end
