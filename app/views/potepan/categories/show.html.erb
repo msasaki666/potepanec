@@ -123,9 +123,9 @@
                   <%= image_tag(product.images.first.attachment(:product)) %>
                 </div>
                 <div class="productCaption clearfix">
-                  <a href="/potepan/products/<% product.id %>">
+                  <%= link_to potepan_product_path(product.id) do %>
                     <h5><%= product.name %></h5>
-                  </a>
+                  <% end %>
                   <h3><%= product.display_price %></h3>
                 </div>
               </div>
