@@ -116,11 +116,11 @@
           </div>
         </div>
         <div class="row">
-          <% @categorized_products.each do |product| %>
+          <% @products.each do |product| %>
             <div class="col-sm-4 col-xs-12">
               <div class="productBox">
                 <div class="productImage clearfix">
-                  <%= image_tag("img/products/products-02.jpg", :alt => "products-img") %>
+                  <%= image_tag(product.images.first.attachment(:product)) %>
                 </div>
                 <div class="productCaption clearfix">
                   <a href="/potepan/products/<% product.id %>">
