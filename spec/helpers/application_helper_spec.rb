@@ -10,7 +10,7 @@ RSpec.describe "ApplicationHelper" do
     end
 
     it "display full_title" do
-      expect(full_title(product.name)).to eq "Custom Product | BIGBAG Store"
+      expect(full_title(product.name)).to eq "Custom Product - BIGBAG Store"
     end
   end
 end

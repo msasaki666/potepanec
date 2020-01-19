@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Products", type: :request do
+RSpec.describe "Potepan::Products", type: :request do
   include ApplicationHelper
   describe "product detail page" do
     let(:product) { create(:custom_product) }
