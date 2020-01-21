@@ -3,11 +3,11 @@ RSpec.feature "Potepan::Categories", type: :feature do
   given(:taxonomy) { create(:taxonomy) }
   given(:taxon) { create(:taxon, taxonomy: taxonomy) }
   given!(:product) { create(:product, taxons: [taxon]) }
-  given(:taxonomy2) { create(:taxonomy) }
-  given(:taxon2) { create(:taxon, taxonomy: taxonomy2) }
+  given(:taxonomy2) { create(:taxonomy, name: "brand2") }
+  given(:taxon2) { create(:taxon, name: "Ruby on Rails2", taxonomy: taxonomy2) }
   given!(:product2) { create(:product, taxons: [taxon2]) }
 
-  scenario "カテゴリーページの確認と商品詳細ページへの移動" do
+  scenario "カテゴリーページでカテゴリーを選び、商品を選択" do
     visit potepan_category_path(taxon.id)
     expect(page).to have_title "#{taxon.name} - BIGBAG Store"
 
@@ -32,10 +32,11 @@ RSpec.feature "Potepan::Categories", type: :feature do
       expect(page).to have_content taxon.products.count
       expect(page).to have_content taxon2.products.count
     end
-
-    click_on product.name
-    expect(current_path).to eq potepan_product_path(product.id)
+    click_on taxonomy2.name
+    click_on taxon2.name
+    click_on product2.name
+    expect(current_path).to eq potepan_product_path(product2.id)
     click_on "一覧ページへ戻る"
-    expect(current_path).to eq potepan_category_path(taxon.id)
+    expect(current_path).to eq potepan_category_path(taxon2.id)
   end
 end
