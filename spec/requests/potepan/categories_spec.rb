@@ -1,13 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "Potepan::Products", type: :request do
+RSpec.describe "Potepan::Categoriess", type: :request do
   include ApplicationHelper
-  describe "product detail page response" do
-    let(:taxon) { create(:taxon) }
+  describe "category page response" do
+    let(:taxonomy) { create(:taxonomy) }
+    let(:taxon) { create(:taxon, taxonomy: taxonomy) }
     let!(:product) { create(:product, taxons: [taxon]) }
 
     before do
-      get potepan_product_path(product.id)
+      get potepan_category_path(taxon.id)
     end
 
     it "returns http success" do
