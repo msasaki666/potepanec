@@ -1,0 +1,23 @@
+<% provide(:title, @taxon.name) %>
+<%= render 'category_header', taxon: @taxon %>
+
+<!-- MAIN CONTENT SECTION -->
+<section class="mainContent clearfix productsContent">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-4 col-xs-12 sideBar">
+        <%= render 'category_side_bar', taxonomies: @taxonomies %>
+        <%= render 'search_by_color' %>
+        <%= render 'search_by_size' %>
+      </div>
+      <div class="col-md-9 col-sm-8 col-xs-12">
+        <div class="row filterArea">
+          <%= render 'sorting_drop' %>
+          <%= render 'change_display' %>
+        </div>
+        <%= render 'products_in_category', products: @products %>
+    </div>
+  </div>
+</section>
+
+<%= render 'potepan/sample/partnerslogo' %>

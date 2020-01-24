@@ -2,9 +2,6 @@ class Potepan::SampleController < ApplicationController
   def index
   end
 
-  def product_grid_left_sidebar
-  end
-
   def product_list_left_sidebar
   end
 
