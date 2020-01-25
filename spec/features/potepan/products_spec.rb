@@ -31,7 +31,7 @@ RSpec.feature "Potepan::Products", type: :feature do
       expect(page).not_to have_content product.name
       expect(page).not_to have_content product3.name
     end
-save_and_open_page
+
     click_on product2.name
     expect(current_path).to eq potepan_product_path(product2.id)
   end
