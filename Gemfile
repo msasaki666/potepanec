@@ -49,6 +49,7 @@ group :development, :test do
   gem 'rails-erd'
   gem 'annotate'
   gem 'rubocop-airbnb'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.2'
 end
 
 group :development do
